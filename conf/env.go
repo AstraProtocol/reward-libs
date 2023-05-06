@@ -47,17 +47,18 @@ type KafkaConfiguration struct {
 }
 
 type Configuration struct {
-	Database   DatabaseConfiguration       `mapstructure:",squash"`
-	Redis      RedisConfiguration          `mapstructure:",squash"`
-	Notify     NotificationConfiguration   `mapstructure:",squash"`
-	EvmRpc     EvmRpcEndpointConfiguration `mapstructure:",squash"`
-	Kafka      KafkaConfiguration          `mapstructure:",squash"`
-	TestSC     SCInfo                      `mapstructure:",squash"`
-	AppName    string                      `mapstructure:"APP_NAME"`
-	AppAddr    string                      `mapstructure:"APP_ADDR"`
-	ConfigFile string                      `mapstructure:"CONFIG_FILE"`
-	DbUrl      string                      `mapstructure:"DB_URL"`
-	Env        string                      `mapstructure:"ENV"`
+	Database     DatabaseConfiguration       `mapstructure:",squash"`
+	Redis        RedisConfiguration          `mapstructure:",squash"`
+	Notify       NotificationConfiguration   `mapstructure:",squash"`
+	EvmRpc       EvmRpcEndpointConfiguration `mapstructure:",squash"`
+	Kafka        KafkaConfiguration          `mapstructure:",squash"`
+	TestSC       SCInfo                      `mapstructure:",squash"`
+	AppName      string                      `mapstructure:"APP_NAME"`
+	AppAddr      string                      `mapstructure:"APP_ADDR"`
+	ConfigFile   string                      `mapstructure:"CONFIG_FILE"`
+	DbUrl        string                      `mapstructure:"DB_URL"`
+	Env          string                      `mapstructure:"ENV"`
+	CouponSecret string                      `mapstructure:"COUPON_SECRET"`
 }
 
 var configuration Configuration
