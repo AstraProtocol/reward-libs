@@ -33,6 +33,7 @@ func RespondJSON(w *gin.Context, status int, payload interface{}, isCached bool)
 	res.Status = status
 	res.Data = payload
 	res.IsCached = isCached
+	w.Abort()
 	w.JSON(status, res)
 }
 
@@ -40,6 +41,7 @@ func RespondErrors(w *gin.Context, status int, payload interface{}) {
 	var res ResponseError
 	res.Status = status
 	res.Errors = payload
+	w.Abort()
 	w.JSON(status, res)
 }
 
@@ -53,6 +55,7 @@ func RespondError(w *gin.Context, status int, msg string, errors ...error) {
 			errResp.Errors = append(errResp.Errors, err.Error())
 		}
 	}
+	w.Abort()
 	w.JSON(status, errResp)
 }
 
